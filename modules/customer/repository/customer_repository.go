@@ -12,5 +12,5 @@ type CustomerRepository interface {
 	FindAll(ctx context.Context) ([]domain.Customer, error)
 	Save(ctx context.Context, customer *domain.Customer) error
 	Update(ctx context.Context, id primitive.ObjectID, customer *domain.Customer) error
-	VerifyEmail(ctx context.Context, token string) error
+	FindByEmail(ctx context.Context, email string) (*domain.Customer, error)
 }
